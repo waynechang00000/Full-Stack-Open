@@ -9,6 +9,7 @@ function App() {
   const [location, setLocation] = useState([]);
   const [display, setDisplay] = useState("");
   const [noresult, setNoresult] = useState(false);
+  const [icon, setIcon] = useState("")
 
   useEffect(() => {
     axios.get(`https://restcountries.com/v3.1/name/${country}?fullText=true`)
@@ -31,6 +32,8 @@ function App() {
       .then(res => {
         console.log(res.data)
         setDisplay(JSON.stringify(res.data))
+        console.log(JSON.parse(display).current.weather[0].icon)
+        setIcon(`http://openweathermap.org/img/wn/${res.data.current.weather[0].icon}@2x.png`)
       })
       .catch(err => {
         console.log(err)
@@ -45,7 +48,7 @@ function App() {
       <div>
         {noresult 
           ? "Please enter a country." 
-          : display}
+          : <img src={icon} alt="icon"></img>}
       </div>
     </div>
   );
