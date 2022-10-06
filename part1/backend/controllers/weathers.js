@@ -9,8 +9,12 @@ const weatherFinder = async (req, res, next) => {
 }
 
 router.get('/', async (req, res) => {
-  const weathers = await Weather.findAll()
-  res.json(weathers)
+  try {
+    const weathers = await Weather.findAll()
+    res.json(weathers)
+  } catch(error) {
+    return res.status(400).json({ error })
+  }
 })
 
 router.post('/', async (req, res) => {

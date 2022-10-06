@@ -1,6 +1,6 @@
 const Weather = require('./weather')
 
-// Weather.sync()
+Weather.sync({ alter: true })
 
 module.exports = {
   Weather
