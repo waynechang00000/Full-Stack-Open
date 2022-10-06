@@ -1,9 +1,16 @@
 GET http://localhost:3001/api/weathers
 
 ###
+GET https://api.openweathermap.org/data/3.0/onecall?lat=30.3&lon=-97.7&exclude=hourly,current,minutely,alerts&appid=ad13301f82e57a4a7d39ec135e991f8b
+
+###
 POST http://localhost:3001/api/weathers HTTP/1.1
 content-type: application/json
 
 {
-    "humidity": 91
-}  
+    "max": 305.35,
+    "min": 291.55,
+    "humidity": 24,
+    "description": 'few clouds',
+    "icon": '02d'
+}
