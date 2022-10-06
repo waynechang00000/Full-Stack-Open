@@ -11,11 +11,19 @@ Weather.init({
     primaryKey: true,
     autoIncrement: true
   },
-  max: {
-    type: DataTypes.FLOAT,
+  year: {
+    type: DataTypes.INTEGER,
     allowNull: false
   },
-  min: {
+  month: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  day: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  temp: {
     type: DataTypes.FLOAT,
     allowNull: false
   },

@@ -11,6 +11,6 @@ content-type: application/json
     "max": 305.35,
     "min": 291.55,
     "humidity": 24,
-    "description": 'few clouds',
-    "icon": '02d'
+    "description": "few clouds",
+    "icon": "02d"
 }
