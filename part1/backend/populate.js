@@ -6,6 +6,9 @@ let counter = 368
 let url = 
   `https://api.openweathermap.org/data/3.0/onecall/timemachine?units=imperial&lat=${austinLoc[0]}&lon=${austinLoc[1]}&dt=${baseTime}&appid=${API_KEY}`
 
+
+// populate data from approximately 2021/1/1 to date
+
 const testGet = async () => {
   try {
     const res = await fetch("http://localhost:3001/api/weathers")
@@ -68,8 +71,11 @@ const postData = async () => {
       throw new Error(`HTTP error! status: ${res.statusText}`);
     }    
     console.log("POST done")
+    baseTime += 3600 * 24
+    // postData()
   } catch (e) {
     console.log("POST fail", e)
+    // return
   }
 }
 
@@ -78,3 +84,5 @@ while (counter < 370) {
   baseTime += 3600 * 24
   counter += 1
 }
+
+// postData()
